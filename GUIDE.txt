@@ -1,0 +1,102 @@
+# ZIART PROD — Guide de personnalisation
+# Réalisé par Innovatech
+# ============================================================
+
+## STRUCTURE DES FICHIERS
+
+ziart-prod/
+├── index.html              ← Page principale (catalogue)
+├── style.css               ← Style de tout le site (ne pas renommer)
+├── photos/                 ← Mettez toutes les vraies photos ici
+│   ├── ext-5photos.jpg
+│   ├── ext-8photos.jpg
+│   ├── ext-10photos.jpg
+│   ├── ext-15photos.jpg
+│   ├── studio-3photos.jpg
+│   ├── studio-5photos.jpg
+│   ... (une photo par prestation)
+│   └── cover.jpg           ← Photo principale de couverture
+└── prestations/            ← Une page HTML par prestation
+    ├── ext-5photos.html    ← MODÈLE à dupliquer
+    ├── ext-8photos.html
+    ... (créez une page par prestation)
+
+
+## COMMENT AJOUTER LES VRAIES PHOTOS
+
+1. Prenez la photo de Latzo pour chaque prestation
+2. Nommez-la exactement comme indiqué ci-dessus
+   ex: ext-5photos.jpg, studio-3photos.jpg
+3. Placez-la dans le dossier /photos/
+4. Dans chaque page HTML, remplacez l'URL Unsplash par :
+   ../photos/ext-5photos.jpg  (pour les pages dans /prestations/)
+   photos/ext-5photos.jpg     (pour index.html)
+
+
+## COMMENT CRÉER UNE NOUVELLE PAGE PRESTATION
+
+1. Copiez le fichier : prestations/ext-5photos.html
+2. Renommez-le :        prestations/ext-8photos.html
+3. Ouvrez-le et modifiez les lignes marquées 🔴 :
+   - og:title       → nouveau titre
+   - og:description → nouvelle description
+   - og:image       → URL de la nouvelle photo
+   - og:url         → URL de la nouvelle page
+   - <title>        → nouveau titre
+   - La photo hero  → src="../photos/ext-8photos.jpg"
+   - Le badge       → "📸 Shooting Extérieur"
+   - Le titre h1    → "8 Photos Extérieur"
+   - Le prix        → "20 000 FCFA"
+   - La liste détails → adaptez les infos
+   - Le lien WhatsApp → changez le texte du message
+
+
+## COMMENT DÉPLOYER SUR GITHUB PAGES (gratuit)
+
+1. Créez un compte GitHub si pas déjà fait
+2. Créez un nouveau repository nommé : ziart-prod
+3. Uploadez tous les fichiers (glisser-déposer)
+4. Allez dans Settings → Pages → Source: main → Save
+5. Votre site sera visible à :
+   https://[votre-username].github.io/ziart-prod/
+
+6. Après déploiement, mettez à jour dans chaque page :
+   - og:url avec la vraie URL
+   - Le lien WhatsApp avec la vraie URL de la page
+   → Le QR Code se génère automatiquement !
+
+
+## TESTER LA MINIATURE WHATSAPP
+
+Après déploiement sur GitHub Pages :
+1. Copiez le lien d'une page prestation
+2. Collez-le dans WhatsApp (à vous-même)
+3. WhatsApp doit afficher la miniature automatiquement
+   (peut prendre 24h la première fois — cache WhatsApp)
+
+Outil de test : https://developers.facebook.com/tools/debug/
+→ Collez votre URL → Click "Debug" → la miniature s'affiche
+
+
+## MODIFIER LE NUMÉRO WHATSAPP
+
+Cherchez dans tous les fichiers HTML :
+  221774922466
+Remplacez par le vrai numéro du client (format international sans +)
+  ex: 221771234567
+
+
+## POUR UN NOUVEAU CLIENT PHOTOGRAPHE
+
+1. Dupliquez tout le dossier ziart-prod/
+2. Renommez le dossier avec le nom du nouveau client
+3. Modifiez dans index.html :
+   - Le nom du studio (ZIART PROD → NOM DU STUDIO)
+   - Le slogan
+   - L'adresse
+   - Le numéro WhatsApp
+   - Les liens réseaux sociaux
+4. Remplacez toutes les photos
+5. Déployez sur GitHub Pages
+6. Générez le QR Code (automatique au déploiement)
+7. Facturez 20 000 à 25 000 FCFA 💰
